@@ -46,7 +46,7 @@ def generate_response(prompt):
 # prompt to generate text
 prompt = f"Can you explain the following {PLanguage} code to me:\n\n{input_code}. Explain using {OLanguage} and if possible explain it more detail !"
 
-# display the name when the submit button is clicked
+# display the response when the submit button is clicked
 if st.button('Submit'):
     response_text = generate_response(prompt)
     st.markdown(f"<div style='width: 705px; white-space: pre-wrap; text-align: justify;'>{response_text}</div>", unsafe_allow_html=True)
