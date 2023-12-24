@@ -7,14 +7,6 @@ Original file is located at
     https://colab.research.google.com/drive/1SoqQiEWqo6iwZ9PP05CZ3YbNCtkBtrIa
 """
 
-! pip install streamlit -q
-
-pip install google-generativeai
-
-!wget -q -O - ipv4.icanhazip.com
-
-! streamlit run app.py & npx localtunnel --port 8501
-
 import google.generativeai as palm
 
 palm.configure(api_key="AIzaSyCJMk65bThdYsPcqbZsBy1xoDGoDz-s1hw")
@@ -58,14 +50,3 @@ prompt = f"Can you explain the following {PLanguage} code to me:\n\n{input_code}
 if st.button('Submit'):
     response_text = generate_response(prompt)
     st.markdown(f"<div style='width: 705px; white-space: pre-wrap; text-align: justify;'>{response_text}</div>", unsafe_allow_html=True)
-
-""" Contoh Code
-
-llm\_data %>%
- ggplot(aes(x=Training\_Data,y=Params, label=Model))+
- geom\_label()+
- labs(
- x= "Training Data (billion tokens)",
- y= "Parameters (billions)"
- )+
- theme\_bw()
